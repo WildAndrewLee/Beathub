@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>{{name}}</title>
+		<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+	</head>
+	<body>
+		<header>
+			<h2>
+				Now Listening To 
+				<span id="title">{{name}}</span>
+			</h2>
+			<span id="status" class="bad"></span>
+		</header>
+		<audio controls id="player">
+			<source src="{{url_for('static', filename='')}}media/{{name}} channel - {{channel}}.wav" type="audio/wav">
+			Your browser does not support the audio element.
+		</audio>
+		<script src="{{url_for('static', filename='control.js')}}?v=1"></script>	
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button id="play">Play</button>
+<button id="pause">Pause</button>
+<script>
+var socket = new WebSocket('ws://104.131.118.92:4242/websocket');
+var args = location.href.split('/');
+var id = args[args.length - 1];
+
+socket.onopen = function(evt){
+	socket.send('id:' + id);
+};
+
+document.getElementById('play').addEventListener('click', function(){
+	socket.send('play:' + id);
+});
+
+document.getElementById('pause').addEventListener('click', function(){
+	socket.send('pause:' + id);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+from flask import flask
+app = Flask(__name__)
+
+@approute("/")
+def audio1():
+	url_for'static, filename = 'when the night comes channel - 1.wav')
